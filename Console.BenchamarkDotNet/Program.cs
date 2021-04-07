@@ -1,10 +1,15 @@
-﻿namespace Console.BenchamarkDotNet
+﻿using BenchmarkDotNet.Running;
+
+namespace Console.BenchamarkDotNet
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            System.Console.WriteLine("!Hola Perú!");
+            System.Console.WriteLine("string vs StringBuilder");
+            BenchmarkRunner.Run<TestBenchmark>();
+            System.Console.WriteLine("¡Benchmark ha terminado!. Presione cualquier tecla para continuar...");
+            System.Console.ReadKey();
         }
     }
 }
